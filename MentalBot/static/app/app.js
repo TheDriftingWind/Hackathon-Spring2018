@@ -2,11 +2,11 @@ var app = angular.module("app", ["ngRoute","ngResource"]);
 
 app.config(function($routeProvider){
   $routeProvider
-  .when("/login",{
-      controller: "LoginCtrl",
-      templateUrl: "app/partials/mainLogin.html"
+  .when("/",{
+      controller: "mentalBotCtrl",
+      templateUrl: "app/partials/mentalBot.html"
   })
-  .when('/', {redirectTo: "/login"})
-  .otherwise({redirectTo: "/login"});
+  .when('/help', {redirectTo: "app/partials/help.html"})
+  .otherwise({redirectTo: "/"});
 
 })

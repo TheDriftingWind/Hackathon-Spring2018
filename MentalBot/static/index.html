@@ -1,14 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Teachable Machine Boilerplate</title>
 
-    <script src="learner.js"></script>
-    <script src="dist/build.js"></script>
-</head>
-<body>
-</body>
+<html ng-app="app">
+  <head>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script type="text/javascript" src="js/angular.min.js"></script>
+    <script type="text/javascript" src="js/angular-route.min.js"></script>
+    <script type="text/javascript" src="js/angular-resource.min.js"></script>
+
+  </head>
+
+  <body>
+  <!-- Partials appear here -->
+    <div id="content" ng-view></div>
+    <!-- App -->
+    <script type="text/javascript" src="app/app.js"></script>
+
+
+    <!-- Controllers -->
+    <script type="text/javascript" src="app/controllers/mentalBotCtrl.js"></script>
+    <!-- Services -->
+
+  </body>
+
 </html>
