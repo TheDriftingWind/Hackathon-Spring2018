@@ -12,21 +12,98 @@
   <div class="container center">
     <video class="video" id="video" autoplay="" playsinline=""></video>
 
-    <div id="b_container" >
-      <button id="button1">Happy</button>
-      <button id="button2">Sad</button>
-      <button id="button3">Angry</button>
-    </div>
+
+    <div ng-show="showdebug == '1'">
     <div id="d_container">
 
     </div>
     <div>
-    {{emo}}
-    {{countDown}}
-    {{scope.show}}
-    <button ng-click="test()">Test</button>
+
+    {{allowShowChange}}
     </div>
   </div>
+  <button id='debug_button' ng-click="toggleDebug()">Toggle Debug</button>
+
+  <!-- Questionaire -->
+  <div ng-show="convo == 0">Hello, I am MentalBot</div>
+
+  <div ng-show='show == 0'>
+    <div ng-show="convo == 30">
+    I can see that you're happy! Keep it up!
+    <button ng-click="finishConvo();setConvo(0)">Ok!</button>
+    <button ng-click="setConvo(99)">No</button>
+    </div>
+  </div>
+
+
+
+
+  <div ng-show="convo == 99 || showdebug == '1'">
+    How are you feeling?
+    <div id="b_container">
+      <button id="button1" ng-click="finishConvo()">Happy</button>
+      <button id="button2" ng-click="finishConvo()">Sad</button>
+      <button id="button3" ng-click="finishConvo()">Angry</button>
+    </div>
+  </div>
+
+  <div ng-show='show == 1'>
+    <div ng-show='convo == 10'>
+      I can see that you're sad...
+      <div>
+        <button ng-click="setConvo(11)">Yes</button>
+        <button ng-click="setConvo(99)">No</button>
+      </div>
+    </div>
+    <div ng-show='convo == 11'>
+      How sad are you?
+      <button ng-click="setConvo(12)">A little down</button>
+      <button ng-click="setConvo(13)">Depressed</button>
+    </div>
+    <div ng-show="convo == 12">
+      I'm sorry to hear that!
+      Maybe <button onclick="window.open('https://www.youtube.com/watch?v=685elao-zvs')" ng-click="finishConvo()">this</button> will make you feel better...
+    </div>
+    <div ng-show="convo == 13">
+      That sounds serious! Please go <a href="http://www.treatmyanxiety.com/" ng-click="finishConvo()">here</a> to find help.
+    </div>
+  </div>
+
+
+
+  <div ng-show='show == 2'>
+    <div ng-show="convo == 20">
+      I can see that you're angry...
+      <div>
+        <button type="button" name="button" ng-click="setConvo(21)">Yes</button>
+        <button type="button" name="button" ng-click="setConvo(99)">No</button>
+      </div>
+    </div>
+    <div ng-show="convo == 21">
+      How angry are you?
+      <button ng-click="setConvo(22)">A little angry</button>
+      <button ng-click="setConvo(23)">Very angry</button>
+    </div>
+    <div ng-show="convo == 22">
+      I'm sorry to hear you're a little angry!
+      Maybe <a href="https://www.youtube.com/watch?v=685elao-zvs" ng-click="finishConvo()">this</a> will be able to help you calm down...
+    </div>
+    <div ng-show="convo == 23">
+      I'm sorry to see that you're really angry!
+      Please try <a href="https://zenhabits.net/meditation-guide/" ng-click="finishConvo()">this</a> to try and calm down.
+    </div>
+  </div>
+
+
+  <!-- <div ng-show="(show == 12) || (show == 21)">
+    How are you feeling?
+    <div>
+      <button type="button" name="button" ng-click="setShow(0)">Happy</button>
+      <button type="button" name="button">Sad</button>
+      <button type="button" name="button">Angry</button>
+    </div>
+  </div> -->
+
 
 </body>
 </html>
