@@ -6,7 +6,7 @@ app.config(function($routeProvider){
       controller: "mentalBotCtrl",
       templateUrl: "app/partials/mentalBot.html"
   })
-  .when('/howTo', {redirectTo: "app/partials/howTo.html"})
+  .when('/help', {redirectTo: "app/partials/help.html"})
   .otherwise({redirectTo: "/"});
 
 })
