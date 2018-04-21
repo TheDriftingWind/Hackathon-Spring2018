@@ -1,4 +1,4 @@
-app.factory("mentalBotSvc", ["$http", "$location", "$window", "$q", function($http, $location, $window, $q){
+app.factory("mentalBotSvc", ["$rootScope", function($rootScope){
 
   (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
   'use strict';
@@ -179,6 +179,7 @@ app.factory("mentalBotSvc", ["$http", "$location", "$window", "$q", function($ht
                   _this2.infoTexts[i].style.fontWeight = 'normal';
                 }
 
+                $rootScope.emotion = res.classIndex;
                 // Update info text
                 if (exampleCount[i] > 0) {
                   _this2.infoTexts[i].innerText = ' ' + exampleCount[i] + ' examples - ' + res.confidences[i] * 100 + '%';
