@@ -60,34 +60,62 @@ app.factory("mentalBotSvc", ["$http", "$location", "$window", "$q", function($ht
 
       // Create training buttons and info texts
 
-      var _loop = function _loop(i) {
-        var div = document.createElement('div');
-        document.body.appendChild(div);
-        div.style.marginBottom = '10px';
-
-        // Create training button
-        var button = document.createElement('button');
-        button.innerText = "Train " + i;
-        div.appendChild(button);
+      // var _loop = function _loop(i) {
+      //-----------------------Button 1------------------------
+        var button_container = document.getElementById("b_container")
+        var debug_c = document.getElementById("d_container")
+        var button1 = document.getElementById('button1');
 
         // Listen for mouse events when clicking the button
-        button.addEventListener('mousedown', function () {
-          return _this.training = i;
+        button1.addEventListener('mousedown', function () {
+          return _this.training = 0;
         });
-        button.addEventListener('mouseup', function () {
+        button1.addEventListener('mouseup', function () {
           return _this.training = -1;
         });
 
-        // Create info text
         var infoText = document.createElement('span');
         infoText.innerText = " No examples added";
-        div.appendChild(infoText);
+        debug_c.appendChild(infoText);
         _this.infoTexts.push(infoText);
-      };
+      //------------------------Button 2--------------------------
+      //var button_container = document.getElementById("b_container")
+      var button2 = document.getElementById('button2');
 
-      for (var i = 0; i < NUM_CLASSES; i++) {
-        _loop(i);
-      }
+      // Listen for mouse events when clicking the button
+      button2.addEventListener('mousedown', function () {
+        return _this.training = 1;
+      });
+      button2.addEventListener('mouseup', function () {
+        return _this.training = -1;
+      });
+
+      var infoText = document.createElement('span');
+      infoText.innerText = " No examples added";
+      debug_c.appendChild(infoText);
+      _this.infoTexts.push(infoText);
+      //------------------------Button 3--------------------------
+      //var button_container = document.getElementById("b_container")
+      var button3 = document.getElementById('button3');
+
+      // Listen for mouse events when clicking the button
+      button3.addEventListener('mousedown', function () {
+        return _this.training = 2;
+      });
+      button3.addEventListener('mouseup', function () {
+        return _this.training = -1;
+      });
+
+      var infoText = document.createElement('span');
+      infoText.innerText = " No examples added";
+      debug_c.appendChild(infoText);
+      _this.infoTexts.push(infoText);
+      //------------------------------------------------------------
+      // };
+
+      // for (var i = 0; i < NUM_CLASSES; i++) {
+      //   _loop(i);
+      // }
 
       // Setup webcam
       navigator.mediaDevices.getUserMedia({ video: true, audio: false }).then(function (stream) {
