@@ -25,3 +25,14 @@
 .pt10{
   padding-top: 10px;
 }
+.center {
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+}
+.video{
+  min-width:100%
+  max-width:100%;
+  width: auto;
+  height: auto;
+}
