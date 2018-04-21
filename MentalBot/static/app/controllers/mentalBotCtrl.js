@@ -1,4 +1,4 @@
-app.controller("mentalBotCtrl", ["$scope", "$http", "$window","$location", function($scope, $http, $window, $location){
+app.controller("mentalBotCtrl", ["mentalBotSvc","$scope", "$http", "$window","$location", function(mentalBotSvc, $scope, $http, $window, $location){
 
 
 }]);
